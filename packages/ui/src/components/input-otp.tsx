@@ -66,10 +66,18 @@ function InputOTPSlot({
   );
 }
 
-function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
+function InputOTPSeparator({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
-    <div data-slot="input-otp-separator" role="separator" {...props}>
+    <div
+      data-slot="input-otp-separator"
+      className={cn("flex items-center", className)}
+      {...props}
+    >
       <MinusIcon />
+      <hr className="sr-only" aria-orientation="horizontal" />
     </div>
   );
 }
